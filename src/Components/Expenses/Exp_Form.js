@@ -86,7 +86,7 @@ const ExpForm = (props) => {
                         <input type="date" key={props.key} value={enteredDate} onChange={EnteredDate} />
                     </div>
                 </div>
-                <button className="btn" type="submit">ADD </button>
+                <button className="btn" type="submit"> + ADD </button>
             </form>
         </div>
     )

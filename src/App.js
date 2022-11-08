@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css"
 import Expenses from "./Components/Expenses/Expenses";
 import ExpForm from "./Components/Expenses/Exp_Form";
@@ -18,8 +18,24 @@ function App() {
         })
     }
 
+
+
     const getFilteredArray = (data, year) => {
         return ArrFilter(data, year)
+    }
+
+
+    const deleteItemsHandler = (id) => {
+        let filterdedData = data.filter((item) => {
+            return item.id !== id
+        })
+        setData([...filterdedData])
+    }
+    const totalHandler = () => {
+        return getFilteredArray(data, year).reduce((total, current) => {
+            return total += current.amount
+        }, 0)
+
     }
 
     return (
@@ -31,10 +47,12 @@ function App() {
                 <Filter setyear={setyear} year={year} data={data} />
                 {
                     getFilteredArray(data, year).map((item, index) => {
-                        return <Expenses key={item.id} id={item.id} Name={item.name} Amount={item.amount} Date={item.date} />
+                        return <Expenses key={item.id} id={item.id} Name={item.name} Amount={item.amount} Date={item.date} onDelete={deleteItemsHandler}
+                            total={totalHandler} />
                     })
                 }
 
+                <div>Total Expense ={totalHandler()}</div>
             </div>
         </div>
     )

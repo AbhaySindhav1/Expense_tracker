@@ -82,6 +82,25 @@ body {
     cursor: pointer;
 }
 
+.Delbtn {
+    padding: 5px 20px;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: #899A79;
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+
+    /* position: absolute; */
+    z-index: 1;
+
+}
+
+.Delbtn:hover {
+    cursor: pointer;
+}
+
+
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

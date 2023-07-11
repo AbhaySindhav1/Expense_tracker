@@ -18,7 +18,7 @@
 
 //     for (const data in props.Data) {
 //         const Ex_month = data.date.getMonth();
-//         chartdata[Ex_month].value += Data.Chartamount
+//         +chartdata[Ex_month].value += +Data.Chartamount
 //     }
 
 //     return <Chart />

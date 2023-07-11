@@ -33,7 +33,7 @@ function App() {
     }
     const totalHandler = () => {
         return getFilteredArray(data, year).reduce((total, current) => {
-            return total += current.amount
+            return +total += +current.amount
         }, 0)
 
     }
